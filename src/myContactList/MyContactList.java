@@ -52,4 +52,14 @@ public class MyContactList extends MyLinkedList<ContactNumber> {
         return display();
     }
 
+    public int addContactNumber() {
+        Node<ContactNumber> contactEntered = enterContactNumber();
+        if (contactEntered == null) {
+            return -1;
+        }
+        insertInAlphabeticOrder(contactEntered);
+        System.out.println("Contact number added!");
+        return 0;
+    }
+
 }
