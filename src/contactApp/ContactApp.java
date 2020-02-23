@@ -173,5 +173,14 @@ public class ContactApp {
         }
     }
 
+    public int displayNames() {
+        if (personMyLinkedList.getHead() == null) {
+            System.out.println("No contacts!");
+            return -1;
+        }
+        System.out.println("Here are all your contacts: ");
+        return personMyLinkedList.display();
+    }
+
 
 }
