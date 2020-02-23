@@ -110,7 +110,7 @@ public class ValidInputs {
     public char inputValidChoice(char char1, char char2, char char3, char char4) {
         char choice;
         choice = inputValidChar();
-        while (choice != char1 && choice != char2) {
+        while (choice != char1 && choice != char2 && choice != char3 && choice != char4) {
             System.out.println("Enter '" + char1 + "' , '" + char2 + "' , '" + char3 + "' or '" + char4 + "' to give your response");
             choice = inputValidChar();
         }
