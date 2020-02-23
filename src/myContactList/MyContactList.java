@@ -43,4 +43,13 @@ public class MyContactList extends MyLinkedList<ContactNumber> {
         return null;
     }
 
+    public int displayContactNumbers() {
+        if (getHead() == null) {
+            System.out.println("No contact numbers!");
+            return -1;
+        }
+        System.out.println("Here are all the contact numbers: ");
+        return display();
+    }
+
 }
