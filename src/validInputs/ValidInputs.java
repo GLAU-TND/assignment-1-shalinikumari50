@@ -83,13 +83,13 @@ public class ValidInputs {
             try {
                 number = Integer.parseInt(numberString);
             } catch (NumberFormatException nfe) {
-                System.out.println("Enter valid input or 'q' to return home");
+                System.out.println("Enter valid input or 'q' to return to menu");
                 flag = 1;
                 continue;
             }
 
             if (number > count || number < 1) {
-                System.out.println("Enter valid number or 'q' to return home");
+                System.out.println("Enter valid number or 'q' to return to menu");
                 flag = 1;
                 continue;
             }
