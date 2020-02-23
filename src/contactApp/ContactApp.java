@@ -1,5 +1,6 @@
 package contactApp;
 
+import contactNumber.ContactNumber;
 import myContactList.MyContactList;
 import myLinkedList.MyLinkedList;
 import node.Node;
@@ -108,6 +109,27 @@ public class ContactApp {
         Person person = new Person(firstName, lastName, mycontactList, emailEntry.toLowerCase());
         personMyLinkedList.insertInAlphabeticOrder(new Node<>(person));
         System.out.println("Contact added!");
+    }
+
+    public void displayAContact(Node<Person> personNode) {
+        System.out.println("-------- * -------- * -------- * --------");
+        System.out.println("First Name: " + personNode.getData().getFirstName());
+        System.out.println("Last Name: " + personNode.getData().getLastName());
+
+        MyContactList myContactList = personNode.getData().getMyContactList();
+        Node<ContactNumber> contactNumber = myContactList.getHead();
+        if (contactNumber.getNext() == null) {
+            System.out.println("Contact Number: ");
+        } else {
+            System.out.println("Contact Number(s): ");
+        }
+        while (contactNumber.getNext() != null) {
+            System.out.print(contactNumber.toString() + ", ");
+            contactNumber = contactNumber.getNext();
+        }
+        System.out.println(contactNumber.toString());
+        System.out.println("Email address: " + personNode.getData().getEmailAddress());
+        System.out.println("-------- * -------- * -------- * --------");
     }
 
 
