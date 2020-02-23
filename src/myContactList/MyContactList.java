@@ -30,17 +30,13 @@ public class MyContactList extends MyLinkedList<ContactNumber> {
             }
             matches = Pattern.matches("(0|(91))?[9876][0-9]{9}", contactNumber);
         }
-        if (!matchFound(contactNumber)) {
             if (contactNumber.length() == 12) {
                 contactNumber = contactNumber.substring(2);
             } else if (contactNumber.length() == 11) {
                 contactNumber = contactNumber.substring(1);
             }
             return new Node<>(new ContactNumber(contactNumber));
-        } else {
-            System.out.println("This contact is already added!");
-        }
-        return null;
+
     }
 
     public int displayContactNumbers() {
@@ -56,6 +52,10 @@ public class MyContactList extends MyLinkedList<ContactNumber> {
         Node<ContactNumber> contactEntered = enterContactNumber();
         if (contactEntered == null) {
             return -1;
+        }
+        if (matchFound(contactEntered.toString())) {
+            System.out.println("This contact is already added!");
+            return 0;
         }
         insertInAlphabeticOrder(contactEntered);
         System.out.println("Contact number added!");
