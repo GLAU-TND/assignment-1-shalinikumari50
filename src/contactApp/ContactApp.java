@@ -119,9 +119,9 @@ public class ContactApp {
         MyContactList myContactList = personNode.getData().getMyContactList();
         Node<ContactNumber> contactNumber = myContactList.getHead();
         if (contactNumber.getNext() == null) {
-            System.out.println("Contact Number: ");
+            System.out.print("Contact Number: ");
         } else {
-            System.out.println("Contact Number(s): ");
+            System.out.print("Contact Number(s): ");
         }
         while (contactNumber.getNext() != null) {
             System.out.print(contactNumber.toString() + ", ");
