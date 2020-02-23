@@ -7,4 +7,8 @@ import validInputs.ValidInputs;
 public class MyContactList extends MyLinkedList<ContactNumber> {
     private static ValidInputs validInputs;
 
+    static {
+        validInputs = new ValidInputs();
+    }
+
 }
